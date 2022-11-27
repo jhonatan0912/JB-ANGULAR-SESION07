@@ -9,12 +9,16 @@ export class ChildrenComponent implements OnInit {
 
   @Input() dato1: Number = 0;
   @Input() dato2: String = "";
-  
 
-  @Output() notify: EventEmitter<String> = new EventEmitter<String>();
+  @Input() parrafoRecibidoDesdeElPadre: String = "";
+
+  @Input() variableRecibidaEnHijo: String = ""
+
+
+  @Output() comunicate: EventEmitter<String> = new EventEmitter<String>();
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
 }

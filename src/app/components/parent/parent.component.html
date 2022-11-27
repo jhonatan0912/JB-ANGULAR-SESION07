@@ -1,11 +1,8 @@
-<p>parent works!</p>
-<hr>
 <fieldset>
-  <table>
-    <tr>
-      <td>
-        <app-children [dato1]="dato1" [dato2]="dato2"></app-children>
-      </td>
-    </tr>
-  </table>
+  <h1>COMPONENTE PADRE</h1>
+
+  <!-- Lo que esta entre corchetes es la propiedad que queremos recibir=>lo que esta entre comillas el nombre que le declaramos en el padre -->
+  <app-children [dato1]="dato1" [dato2]="dato2" [parrafoRecibidoDesdeElPadre]="parrafo"
+    [variableRecibidaEnHijo]="variableDeclaradaEnPadre"></app-children>
+
 </fieldset>

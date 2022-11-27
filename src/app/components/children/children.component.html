@@ -1,4 +1,14 @@
-<p>Children component</p>
-<h3>Pasando datos del componente padre al componente hijo</h3>
-<h2>{{dato1}}</h2>
-<h2>{{dato2}}</h2>
+<fieldset class="componente-hijo-container">
+  <h1>COMPONENTE HIJO</h1>
+  <b>Dato 1: {{dato1}}</b>
+  <br>
+  <br>
+  <b>Dato 2: {{dato2}}</b>
+  <br>
+  <br>
+  <!-- ya tenemos disponible la prop parrafoRecibidoDesdeElPadre y podemos mostrar el valor-->
+  <b>Parrafo: {{parrafoRecibidoDesdeElPadre}}</b>
+  <br>
+  <br>
+  <b>Nueva variable: {{variableRecibidaEnHijo}}</b>
+</fieldset>
