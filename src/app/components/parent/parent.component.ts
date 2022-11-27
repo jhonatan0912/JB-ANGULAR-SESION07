@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+interface User {
+  name: String;
+  ID: String;
+  civilState: String;
+}
+
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
@@ -7,18 +13,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
-  // send data to children component
-  public dato1: Number = 10;
-  public dato2: String = "Segundo dato desde parent";
-  
-  public nombre: String = "";
-  public dni: String = "";
-  public estadoCivil: String = "";
+  usuario: User = {
+    name: "",
+    ID: "",
+    civilState: ""
+  }
 
-  process(name: HTMLInputElement, dni: HTMLInputElement, civilState: HTMLInputElement) {
-    this.nombre = name.value
-    this.dni = dni.value
-    this.estadoCivil = civilState.value
+  public nombrePadre: String = "";
+  public dniPadre: String = "";
+  public estadoCivilPadre: String = "";
+  public resultPadre: String = ""
+
+
+  process(name: HTMLInputElement, dni: HTMLInputElement, civilState: HTMLSelectElement) {
+    this.nombrePadre = name.value;
+    this.dniPadre = dni.value;
+    this.estadoCivilPadre = civilState.value;
+
+
+
+    this.usuario.name = this.nombrePadre
+    this.usuario.ID = this.dniPadre
+    this.usuario.civilState = this.estadoCivilPadre
+    this.resultPadre = JSON.stringify(this.usuario)
+
+    console.log(JSON.stringify(this.usuario));
+
+    return false;
+
   }
 
   constructor() { }

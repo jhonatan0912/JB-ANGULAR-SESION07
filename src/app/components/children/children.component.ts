@@ -13,6 +13,8 @@ export class ChildrenComponent implements OnInit {
   @Input() nombre: String = ""
   @Input() dni: String = ""
   @Input() estadoCivil: String = ""
+  @Input() resultHijo: String = ""
+  
 
 
   @Output() notify: EventEmitter<String> = new EventEmitter<String>();

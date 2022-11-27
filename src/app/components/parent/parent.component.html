@@ -1,18 +1,24 @@
 <div class="container">
-  <app-children [nombre]="nombre" [dni]="dni" [estadoCivil]="estadoCivil"></app-children>
-  <form>
-    <label for="nombre">
+
+  <form class="d-flex flex-column rounded border p-5 mt-5 gap-3 w-50 m-auto">
+    <h1 class="text-primary">Registro de Personas</h1>
+    <app-children [nombre]="nombrePadre" [dni]="dniPadre" [estadoCivil]="estadoCivilPadre" [resultHijo]="resultPadre">
+    </app-children>
+    <label class="d-flex flex-column" for="nombre">
       <b>Nombre:</b>
-      <input type="text" name="nombre" #name>
+      <input class="form-control" type="text" name="nombre" #name>
     </label>
-    <label for="dni">
+    <label class="d-flex flex-column" for="dni">
       <b>DNI:</b>
-      <input type="text" name="dni" #dni>
+      <input class="form-control" type="text" name="dni" #dni>
     </label>
-    <label for="estado-civil">
+    <label class="d-flex flex-column" for="estado-civil">
       <b>Estado Civil:</b>
-      <input type="text" name="estado-civil" #civilState>
+      <select name="civilState" id="civilState" #civilState class="form-control">
+        <option value="Soltero">Soltero</option>
+        <option value="casado">Casado</option>
+      </select>
     </label>
-    <button class="btn btn-success" (click)="process(name,dni,civilState)">Enviar</button>
+    <button class="btn btn-success d-block m-auto" (click)="process(name,dni,civilState)">Enviar</button>
   </form>
 </div>
