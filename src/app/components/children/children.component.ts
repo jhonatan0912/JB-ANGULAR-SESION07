@@ -9,12 +9,16 @@ export class ChildrenComponent implements OnInit {
 
   @Input() dato1: Number = 0;
   @Input() dato2: String = "";
-  
+
+  @Input() nombre: String = ""
+  @Input() dni: String = ""
+  @Input() estadoCivil: String = ""
+
 
   @Output() notify: EventEmitter<String> = new EventEmitter<String>();
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
 }

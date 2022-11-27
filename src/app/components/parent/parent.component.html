@@ -1,11 +1,18 @@
-<p>parent works!</p>
-<hr>
-<fieldset>
-  <table>
-    <tr>
-      <td>
-        <app-children [dato1]="dato1" [dato2]="dato2"></app-children>
-      </td>
-    </tr>
-  </table>
-</fieldset>
+<div class="container">
+  <app-children [nombre]="nombre" [dni]="dni" [estadoCivil]="estadoCivil"></app-children>
+  <form>
+    <label for="nombre">
+      <b>Nombre:</b>
+      <input type="text" name="nombre" #name>
+    </label>
+    <label for="dni">
+      <b>DNI:</b>
+      <input type="text" name="dni" #dni>
+    </label>
+    <label for="estado-civil">
+      <b>Estado Civil:</b>
+      <input type="text" name="estado-civil" #civilState>
+    </label>
+    <button class="btn btn-success" (click)="process(name,dni,civilState)">Enviar</button>
+  </form>
+</div>
